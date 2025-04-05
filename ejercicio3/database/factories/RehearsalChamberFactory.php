@@ -17,9 +17,9 @@ class RehearsalChamberFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word(),
-            'capacity' => $this->faker->numberBetween(10, 200),
-            'is_available' => $this->faker->boolean(),
+            'name' => fake()->word(),
+            'capacity' => fake()->numberBetween(10, 200),
+            'is_available' => fake()->boolean(),
         ];
     }
 }

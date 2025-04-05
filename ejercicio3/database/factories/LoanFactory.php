@@ -19,10 +19,10 @@ class LoanFactory extends Factory
         $statuses = ['En préstamo',  'Devuelto', 'Retrasado', 'Perdido'];
 
         return [
-            'loan_date' => $this->faker->date(),
-            'return_date' => $this->faker->optional()->date(),
-            'instrument_id' => $this->faker->numberBetween(1, 18),
-            'musician_id' => $this->faker->numberBetween(1, 20),
+            'loan_date' => fake()->date(),
+            'return_date' => fake()->optional()->date(),
+            'instrument_id' => fake()->numberBetween(1, 18),
+            'musician_id' => fake()->numberBetween(1, 20),
             'status' => $statuses[array_rand($statuses)],
         ];
     }
