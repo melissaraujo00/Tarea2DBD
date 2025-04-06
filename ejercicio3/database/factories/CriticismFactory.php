@@ -17,9 +17,9 @@ class CriticismFactory extends Factory
     public function definition(): array
     {
         return [
-            'criticism' => $this->faker->optional()->paragraph(),  // Crítica opcional
-            'rate' => $this->faker->numberBetween(1, 5) + $this->faker->randomFloat(1, 0, 0.9),  // Calificación con decimales
-            'presentation_id' => $this->faker->numberBetween(1, 10),
+            'criticism' => fake()->optional()->paragraph(), 
+            'rate' => fake()->numberBetween(1, 5) + fake()->randomFloat(1, 0, 0.9),  // Calificación con decimales
+            'presentation_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

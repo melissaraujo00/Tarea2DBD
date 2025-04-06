@@ -19,11 +19,11 @@ class RehearsalFactory extends Factory
     public function definition(): array
     {
         return [
-            'date' => $this->faker->date(),
-            'start_time' => $this->faker->time(),
+            'date' => fake()->date(),
+            'start_time' => fake()->time(),
             'musician_id' => Musician::where('is_available', 0)->inRandomOrder()->first()->id,
-            'musical_id' => $this->faker->numberBetween(1, 10),
-            'rehearsal_chamber_id' => RehearsalChamber::where('is_available', 0)->inRandomOrder()->first()->id, 
+            'musical_id' => fake()->numberBetween(1, 10),
+            'rehearsal_chamber_id' => RehearsalChamber::where('is_available', 0)->inRandomOrder()->first()->id,
         ];
     }
 }

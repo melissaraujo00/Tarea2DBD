@@ -32,12 +32,10 @@ class DatabaseSeeder extends Seeder
             ->count(20)
             ->hasAttached(
                 Instrument::all()->random(3),
-                function () {
-                    return [
-                        'level' => fake()->randomElement(['Principiante', 'Basico', 'Intermedio', 'Avanzado', 'Profesional', 'Maestro']),
-                        'is_orchestra' => fake()->boolean(),
-                    ];
-                }
+                [
+                            'level' => fake()->randomElement(['Principiante', 'Basico', 'Intermedio', 'Avanzado', 'Profesional', 'Maestro']),
+                            'is_orchestra' => fake()->boolean(),
+                        ]
             )
             ->create();
 
@@ -48,11 +46,9 @@ class DatabaseSeeder extends Seeder
             ->count(10)
             ->hasAttached(
                 Instrument::all()->random(2),
-                function () {
-                    return [
-                        'quantity' => fake()->numberBetween(1, 10),
-                    ];
-                }
+                [
+                    'quantity' => fake()->numberBetween(1, 10),
+                ]
             )
             ->create();
 

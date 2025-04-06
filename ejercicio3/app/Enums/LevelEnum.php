@@ -8,5 +8,5 @@ enum LevelEnum: string
     case INTERMEDIANTE = 'Intermedio';
     case ADVANCED = 'Avanzado';
     case PROFFESIONAL = 'Profesional';
-    case MAESTER = 'Maestro';
+    case MASTER = 'Maestro';
 }
