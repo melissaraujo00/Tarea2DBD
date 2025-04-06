@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('phone_number',25);
             $table->boolean('is_available');
-            $table->timestamps();
         });
     }
 

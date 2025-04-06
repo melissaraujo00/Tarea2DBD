@@ -9,6 +9,7 @@ class Criticism extends Model
 {
     /** @use HasFactory<\Database\Factories\CriticismFactory> */
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
         'criticism',

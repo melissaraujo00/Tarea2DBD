@@ -9,6 +9,7 @@ class RehearsalChamber extends Model
 {
     /** @use HasFactory<\Database\Factories\RehearsalChamberFactory> */
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable =
     [

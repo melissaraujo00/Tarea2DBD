@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignIdFor(Instrument::class)->constrained();
             $table->foreignIdFor(Musician::class)->constrained();
             $table->enum('status', ['En préstamo',  'Devuelto', 'Retrasado', 'Perdido']);
-            $table->timestamps();
         });
     }
 
