@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,15 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('permission_role', function (Blueprint $table) {
+            $table->foreignIdFor(Permission::class)->constrained();
             $table->foreignIdFor(Role::class)->constrained();
-            $table->string('name',50);
-            $table->string('last_name',50);
-            $table->string('telephone',20);
-            
-        });
 
+        });
     }
 
     /**
@@ -28,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('role_permission');
     }
 };
