@@ -9,15 +9,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class WeatherStationFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    
+     
+    public function definition()
     {
         return [
-            //
+            'station_name' => $this->faker->unique()->word,  
+            'location' => $this->faker->city,  
+            'latitude' => $this->faker->latitude,  
+            'altitude' => $this->faker->randomFloat(2, 0, 5000),  
+            'installation_date' => $this->faker->date,  
+            'state' => $this->faker->boolean,  
         ];
     }
 }

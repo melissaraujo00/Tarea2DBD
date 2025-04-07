@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProximityStationComparison;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +17,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(RolePermissionSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(WeatherStationSeeder::class);
+        $this->call(ClimateRecordSeeder::class);
+        $this->call(TypeMaintenanceSeeder::class);
+        $this->call(MaintenanceSeeder::class);
+        $this->call(ServiceTechnicianSeeder::class);
+        $this->call(MaintenanceServiceTechnicianSeeder::class);
+        $this->call(ProximityStationComparisonSeeder::class);
     }
 }

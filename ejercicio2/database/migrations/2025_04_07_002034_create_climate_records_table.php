@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\WeatherStation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\WeatherStation;
 
 return new class extends Migration
 {
@@ -21,7 +21,6 @@ return new class extends Migration
             $table->dateTime('measurement_start_time');
             $table->dateTime('measurement_end_time');
             $table->date('measurement_date');
-            
         });
     }
 

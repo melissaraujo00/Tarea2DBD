@@ -9,4 +9,14 @@ class Permission extends Model
 {
     /** @use HasFactory<\Database\Factories\PermissionFactory> */
     use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable=[
+        'permission_name',
+        'description'
+    ];
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
 }

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('weather_stations', function (Blueprint $table) {
             $table->id();
-            $table->string('station_name',50);
+            $table->string('station_name',50)->unique();
             $table->string('location',50);
             $table->string('latitude',50);
             $table->decimal('altitude',12,2);
             $table->date('installation_date');
-            $table->boolean('state')->default(1); //las estaciones pueden tener un estado de activas(1) o inactivas(0), por defecto estaran activas
+            $table->boolean('state')->default(true);
         });
     }
 
