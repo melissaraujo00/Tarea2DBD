@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\WeatherStation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,8 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //tabla intermedia para comparar datos de dos estaciones, en esta tabla se hace referencia a dos elementos de uan misma tabla
-        Schema::create('proximity_station_comparison', function (Blueprint $table) {
+        Schema::create('proximity_station_comparisons', function (Blueprint $table) {
             $table->id();
 
             //estacion de origen
@@ -30,6 +28,9 @@ return new class extends Migration
             $table->decimal('humidity_difference',5,2);
             $table->decimal('pressure_difference',5,2);
             $table->dateTime('date_comparison');
+
+            $table->unique(['origin_station_id', 'nearby_station_id', 'date_comparison'], 'proximity_unique');
+            
             
         });
     }
@@ -39,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proximity_station_comparison');
+        Schema::dropIfExists('proximity_station_comparisons');
     }
 };

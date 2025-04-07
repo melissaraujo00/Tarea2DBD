@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ServiceTechnician;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class ServiceTechnicianSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ServiceTechnician::factory(15)->create();
     }
 }

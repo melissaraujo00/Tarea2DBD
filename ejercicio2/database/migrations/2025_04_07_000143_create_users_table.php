@@ -1,10 +1,9 @@
 <?php
 
-use App\Models\Role;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\Models\Role;
 return new class extends Migration
 {
     /**
@@ -17,10 +16,8 @@ return new class extends Migration
             $table->foreignIdFor(Role::class)->constrained();
             $table->string('name',50);
             $table->string('last_name',50);
-            $table->string('telephone',20);
-            
+            $table->string('telephone',20)->unique();
         });
-
     }
 
     /**
@@ -29,7 +26,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
     }
 };

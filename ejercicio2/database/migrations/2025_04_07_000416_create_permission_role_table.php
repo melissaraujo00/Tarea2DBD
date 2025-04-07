@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Role;
+use App\Models\Permission;
 
 return new class extends Migration
 {
@@ -11,9 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types_maintenance', function (Blueprint $table) {
-            $table->id();
-            $table->string('maintenance_name',50);
+        Schema::create('permission_role', function (Blueprint $table) {
+            $table->foreignIdFor(Permission::class)->constrained();
+            $table->foreignIdFor(Role::class)->constrained();
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('types_maintenance');
+        Schema::dropIfExists('permission_role');
     }
 };
