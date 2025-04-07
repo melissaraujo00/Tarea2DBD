@@ -9,9 +9,11 @@ class Dating extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'artifact_id',
-        'description'
+        'name'
     ];
 
     // Cada datacion pertenece a un artefacto

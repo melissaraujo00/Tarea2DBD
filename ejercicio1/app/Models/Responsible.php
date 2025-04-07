@@ -12,8 +12,8 @@ class Responsible extends Model
 
     protected $fillable = ['name', 'description'];
 
-    public function artifacts()
+    public function conservationTechniques()
     {
-        return $this->hasMany(Artifact::class);
+        return $this->hasMany(ConservationTechnique::class);
     }
 }

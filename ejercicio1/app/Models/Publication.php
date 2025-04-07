@@ -12,8 +12,6 @@ class Publication extends Model
 
     protected $fillable = ['description', 'date'];
 
-    // Relacion muchos a muchos: Un mismo artifact puede aparecer en varias publicaciones,
-    // y una publicacion puede incluir varios artifacts.
     public function artifacts()
     {
         return $this->belongsToMany(Artifact::class, 'artifact_publication');

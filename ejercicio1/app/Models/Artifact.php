@@ -21,20 +21,23 @@ class Artifact extends Model
         'entry_date'
     ];
 
-    // Relaciones con las otras tablas
-    public function excavation()
-    {
-        return $this->belongsTo(Excavation::class);
-    }
 
     public function time()
     {
         return $this->belongsTo(Time::class);
     }
-
     public function material()
     {
         return $this->belongsTo(Material::class);
+    }
+
+    public function publication()
+    {
+        return $this->belongsTo(Publication::class);
+    }
+    public function exhibition()
+    {
+        return $this->belongsTo(Exhibition::class);
     }
 
     public function conservationTechnique()
@@ -42,14 +45,13 @@ class Artifact extends Model
         return $this->belongsTo(ConservationTechnique::class);
     }
 
-    public function responsible()
-    {
-        return $this->belongsTo(Responsible::class);
-    }
-
-    // Un artefacto puede tener muchas dataciones
     public function datings()
     {
         return $this->hasMany(Dating::class);
+    }
+
+    public function excavation()
+    {
+        return $this->belongsTo(Excavation::class);
     }
 }

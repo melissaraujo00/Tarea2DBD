@@ -10,11 +10,17 @@ class ConservationTechnique extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'responsible_id', 'description'];
 
-    // Relación: Una tecnica de conservación puede aplicarse a muchos artifacts
+    // Relacion: Una tecnica de conservacion puede aplicarse a muchos artifacts
     public function artifacts()
     {
         return $this->hasMany(Artifact::class);
+    }
+
+    // Cada tecnica de conservacion pertenece a un responsable
+    public function responsible()
+    {
+        return $this->belongsTo(Responsible::class);
     }
 }

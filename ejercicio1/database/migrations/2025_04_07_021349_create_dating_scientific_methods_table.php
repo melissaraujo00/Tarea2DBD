@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Models\Dating;
 use App\Models\ScientificMethod;
 use Illuminate\Database\Migrations\Migration;
