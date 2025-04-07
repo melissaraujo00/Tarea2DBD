@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->foreignIdFor(Composer::class)->constrained();
-            $table->timestamps();
         });
     }
 

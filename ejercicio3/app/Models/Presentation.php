@@ -9,6 +9,7 @@ class Presentation extends Model
 {
     /** @use HasFactory<\Database\Factories\PresentationFactory> */
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
         'audience',

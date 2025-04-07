@@ -9,6 +9,7 @@ class Musical extends Model
 {
     /** @use HasFactory<\Database\Factories\MusicalFactory> */
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',

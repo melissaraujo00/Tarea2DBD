@@ -9,8 +9,9 @@ class Composer extends Model
 {
     /** @use HasFactory<\Database\Factories\ComposerFactory> */
     use HasFactory;
+    public $timestamps = false;
     protected $fillable= [
         'name'
     ];
-    
+
 }

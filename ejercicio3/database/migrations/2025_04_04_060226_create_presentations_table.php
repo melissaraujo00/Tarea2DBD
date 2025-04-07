@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('audience');
             $table->date('date');
             $table->foreignIdFor(Musical::class)->constrained();
-            $table->timestamps();
         });
     }
 

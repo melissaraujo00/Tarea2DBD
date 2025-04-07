@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name', 50);
             $table->integer('capacity');
             $table->boolean('is_available');
-            $table->timestamps();
         });
     }
 

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->foreignIdFor(Musician::class)->constrained();
             $table->foreignIdFor(Musical::class)->constrained();
             $table->foreignIdFor(RehearsalChamber::class)->constrained();
-            $table->timestamps();
         });
     }
 

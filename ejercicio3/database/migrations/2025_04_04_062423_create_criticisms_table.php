@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('criticism')->nullable();
             $table->decimal('rate', 4,1);
             $table->foreignIdFor(Presentation::class)->constrained();
-            $table->timestamps();
         });
     }
 
